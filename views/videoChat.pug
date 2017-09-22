@@ -1,0 +1,42 @@
+extends partials/head
+
+block vars
+	-var bodyId = 'videoChat'
+
+block content
+	-selectNav = 'golive'
+
+	include partials/header
+
+	.top
+		.video
+			.overlay
+				.time-left
+					span.mins-passed 6
+					|  / 
+					span.mins-total 10
+					|  mins
+				.btns
+					.end  x 
+					.mute-video  K 
+					.mute-audio  T 
+				.your-video
+			.v-wrap
+				video(src='')
+		.chat
+			.info
+				img(src='', alt='')
+				.name Derby
+			.messages
+				.message.you
+					.text Whats up
+				.message.other
+					.text Nothing Much
+			.input(placeholder='Type here')
+				.send-btn
+				input(type='text', placeholder='Type here')
+	.notes
+		span.title Notes
+		span.status Changes Saved
+		label.text
+			textarea hi
