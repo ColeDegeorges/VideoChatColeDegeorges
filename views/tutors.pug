@@ -33,7 +33,7 @@ block content
 				#d1.line_divider
 				.tutors
 					each tutor in tutors
-						a(href='/tutors/'+tutor._id).tutor
+						a(href='/tutors/'+tutor._id, class= `tutor ${me.id == tutor.id ? 'hide' : ''}`)
 							img(src=tutor.picture, alt='profile picture')
 							.inner_box
 								.name= `${tutor.firstName} ${tutor.lastName}`
@@ -48,23 +48,19 @@ block content
 										span.subject= sub
 										unless ( i == tutor.subjects.length - 1)
 											|, 
-					-var filled = tutors.length % 3
-					-var n = (filled > 0) ? 3-filled : 0;
-					while n-- > 0
+					-var n = 4
+					while n--
 						a.empty
 		
 		.right
 			.title
 				span.green
 				span AVAILABLE NOW 
-				span.count (4)
+				span.count (#[span.number])
 			.online
-				a.tutor(href='#')
+				a.tutor.hide(href='#')
 					img.img(src='https://randomuser.me/api/portraits/men/50.jpg')
 					.r
 						.name Mathew Jitter
 						.subjects
-							span.subj Bio
-							span.subj Calc
-							span.subj Psyc
-							span.subj Algebra
+	script(src='/javascripts/tutors.js')

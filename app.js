@@ -8,6 +8,10 @@ var lessMiddleware = require('less-middleware');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var mongoose = require('mongoose');
+var io = require('socket.io');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+
 mongoose.Promise = global.Promise;
 
 mongoose.connect('mongodb://localhost/node-auth')
@@ -37,13 +41,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-//passportjs
+ 
 
-app.use(require('express-session')({
+//passportjs
+let sessionMiddleware = session({
   secret: 'sdlkfj salkjflksajfl ;skadjf389838h',
   resave: true,
-  saveUninitialized: false
-}));
+  saveUninitialized: false,
+  store: new MongoStore({mongooseConnection: mongoose.connection, ttl: 14 * 24 * 60 * 60 })
+});
+
+let socketio = require('./bin/websocket');
+socketio.attachSession(sessionMiddleware);
+
+
+app.use(sessionMiddleware);
 app.use(passport.initialize());
 app.use(passport.session());
 

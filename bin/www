@@ -6,20 +6,35 @@
 
 var app = require('../app');
 var debug = require('debug')('myapp:server');
-var http = require('http');
+var https = require('https');
+var fs = require('fs');
+var path = require('path');
 /**
  * Get port from environment and store in Express.
  */
 
 var port = normalizePort(process.env.PORT || '3000');
+console.log(port);
 app.set('port', port);
+
+process.on('unhandledRejection', (reason, p) => {
+  console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);
+  // application specific logging, throwing an error, or other logic here
+});
 
 /**
  * Create HTTP server.
  */
+var options = {
+  key: fs.readFileSync(path.join(__dirname, './yoursite.key')),
+  cert: fs.readFileSync(path.join(__dirname, './yoursite.crt')),
+  requestCert: false,
+  rejectUnauthorized: false
+};
 
-var server = http.createServer(app);
-var io = require('socket.io').listen(server);
+var server = https.createServer(options, app);
+let socketio = require('./websocket');
+socketio.attachServer(server);
 
 /**
  * Listen on provided port, on all network interfaces.

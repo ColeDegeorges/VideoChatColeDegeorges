@@ -21,8 +21,9 @@ block content
 					.mute-video  K 
 					.mute-audio  T 
 				.your-video
+					video(id='my_video', autoplay)
 			.v-wrap
-				video(src='')
+				video(id='rtc_video', autoplay)
 		.chat
 			.info
 				img(src='', alt='')
@@ -40,3 +41,6 @@ block content
 		span.status Changes Saved
 		label.text
 			textarea hi
+
+	script(src='https://webrtc.github.io/adapter/adapter-latest.js')
+	script(src='/javascripts/videoChat.js')

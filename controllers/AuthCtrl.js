@@ -31,15 +31,17 @@ userController.registerPost = function (req, res) {
             }
 
             return res.render('register', { user: form_data, err: errors, subjects: SUBJECTS });
+        } else {
+            req.login(user, function (err) {
+                console.log('login Error: ', err);
+                if (!err) {
+                    res.redirect('/');
+                } else {
+                    res.redirect('/login');
+                }
+            });
         }
 
-        req.login(user, function (err) {
-            if (!err) {
-                res.redirect('/');
-            } else {
-                res.redirect('/login');
-            }
-        });
     });
 };
 
@@ -50,7 +52,7 @@ userController.login = function (req, res) {
 
 // Post login
 userController.loginPost = function (req, res, next) {
-    if (!req.body.username || !req.body.password) {
+    if (!req.body.email || !req.body.password) {
         return res.render('login', { "err": "All fields required" });
     }
     passport.authenticate('local', function (err, user, info) {

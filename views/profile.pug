@@ -20,23 +20,24 @@ block content
 						.gray ★★
 					.number 32
 				.status
-					span.circle.green
-					span.text Available
-				.session_len
-					span Choose Duration
-					select(name='session_len')
-						option(value='10') 10 mins
-						option(value='15') 15 mins
-						option(value='20') 20 mins
-						option(value='25') 25 mins
-						option(value='30') 30 mins
-						option(value='40') 40 mins
-						option(value='60') 60 mins
-				a.action(hef='#')
-					| Start Session 
-					span.total_cost
-						| $
-						span.cost 10
+					span.circle(class=tutor.status)
+					span.text= tutor.status[0].toUpperCase()+tutor.status.substr(1)
+				form(id='sessForm' action= tutor.id+'/request', method='post')
+					.session_len
+						span Choose Duration
+						select(name='session_len')
+							option(value='10') 10 mins
+							option(value='15') 15 mins
+							option(value='20') 20 mins
+							option(value='25') 25 mins
+							option(value='30') 30 mins
+							option(value='40') 40 mins
+							option(value='60') 60 mins
+					.action(hef='#')
+						| Start Session 
+						span.total_cost
+							| $
+							span.cost 10
 		.desc
 			| Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore mollitia autem adipisci qui, ea ratione culpa pariatur, facilis, delectus commodi dolore. Voluptates rem repellat maiores molestiae adipis ipsum dolor sit, amet consectetur adipisicing elit. Labore mollitia autem adipisci qui, ea ratione culpa pariatur, facilis, delectus commodi dolore. Voluptates rem repellat maiores molestiae adipisci, quae numquam modi.
 		.details
@@ -55,3 +56,4 @@ block content
 			.detail
 				.d My rate is
 				.i $10/10min, $60/hr
+	script(src='/javascripts/profile.js')

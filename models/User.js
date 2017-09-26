@@ -53,10 +53,10 @@ const nameValidate = [{
 
 
 const UserSchema = new mongoose.Schema({
-    email: { type: String, unique: true, validate: emailValidate, required: true },
-    firstName: { type: String, validate: nameValidate, required: true},
-    lastName: { type: String, validate: nameValidate, required: true }
-}, {discriminatorKey: 'kind'});
+    email: { type: String, unique: true, validate: emailValidate, required: true, lowercase: true, trim: true },
+    firstName: { type: String, validate: nameValidate, required: true, trim: true },
+    lastName: { type: String, validate: nameValidate, required: true, trim: true }
+}, { discriminatorKey: 'kind', timestamps: true });
 
 
 //

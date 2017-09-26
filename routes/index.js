@@ -23,6 +23,7 @@ router.post('/register', authCtrl.registerPost);
 
 router.get('/tutors', middlewares.isAuthenticated, tutorsCtrl.searchIndex);
 router.get('/tutors/:id', middlewares.isAuthenticated, tutorsCtrl.profile);
+router.post('/tutors/:id/request', middlewares.isAuthenticated, tutorsCtrl.sessionReq);
 router.get('/golive', middlewares.isAuthenticated, tutorsCtrl.goLive);
 
 

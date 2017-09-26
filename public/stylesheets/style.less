@@ -256,7 +256,7 @@ header .folded:hover .hover_menu a:hover {
 }
 
 #tutorsPage {
-    
+
   .container {
       display: flex;
   }
@@ -291,6 +291,15 @@ header .folded:hover .hover_menu a:hover {
       display: flex;
       justify-content: space-between;
   }
+  .container .left form.search .filters label {
+    margin: 0 10px;
+    &:first-of-type {
+      margin-left: 0;
+    }
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
   .container .left form.search .filters select {
       min-width: 100px;
       margin-left: 14px;
@@ -305,6 +314,10 @@ header .folded:hover .hover_menu a:hover {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      &:after {
+        content: '';
+        flex-grow: 1;
+      }
   }
   .left .tutors .tutor {
       cursor: pointer;
@@ -314,7 +327,9 @@ header .folded:hover .hover_menu a:hover {
       margin-bottom: 20px;
       text-decoration: none;
       color: black;
-      
+      &.hide {
+        display: none;
+      }
   }
   .left .tutors .empty {
     min-width: 193px;
@@ -393,6 +408,17 @@ header .folded:hover .hover_menu a:hover {
   }
   .right .tutor .subjects {
       color: #505050;
+      .subj {
+        &:after {
+          content: ', ';
+        }
+        &:last-of-type:after {
+          content: '';
+        }
+      }
+  }
+  .container .right .hide {
+    display: none;
   }
 }
 
@@ -497,12 +523,18 @@ header .folded:hover .hover_menu a:hover {
     justify-content: center;
     margin-bottom: 50px;
   }
-
+  .container .info .left {
+    align-items: center;
+    display: flex;
+  }
   .container .info .right {
     margin-left: 20px;
     position: relative;
     flex-direction: column;
     display: flex;
+    flex-grow: 1;
+    max-width: 214.6px;
+    justify-content: space-between;
   }
   .container .name {
     font-size: 38px;
@@ -526,7 +558,8 @@ header .folded:hover .hover_menu a:hover {
     color: #bbb;
   }
   .container .status {
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-bottom: 8px;
   }
   .container .status .circle {
     width: 12px;
@@ -536,14 +569,25 @@ header .folded:hover .hover_menu a:hover {
     display: inline-block;
   }
 
-  .container .status .circle.green {
-    background-color: #08D628;
+  .container .status .circle {
+    &.available {
+      background-color: #08D628;
+    }
+    &.busy {
+      background-color: #ECB910;
+    }
+    &.offline {
+      background-color: #ddd;
+    }
   }
   .container .info .session_len {
     margin-top: auto;
     margin-bottom: 8px;
   }
-
+  .container .info form {
+    display: flex;
+    flex-direction: column;
+  }
   .container .info .total_cost {
     float: right;
     position: relative;
@@ -565,6 +609,7 @@ header .folded:hover .hover_menu a:hover {
   }
   .container .info .session_len select {
     font-size: 15px;
+    margin-left: 15px;
   }
 
   .container .info .action {

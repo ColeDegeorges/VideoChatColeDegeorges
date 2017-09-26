@@ -28,7 +28,8 @@ const TutorSchema = new mongoose.Schema({
     picture: { type: String, default: '/images/default_profile_pic.jpg' },
     college: {type: String, validate: { validator: () => true } },
     languages: {type: Array, validate: { validator: () => true } },
-    price: {type: Number}
+    price: {type: Number, default: 0},
+    status: {type: String, default: 'offline'}
 }, { discriminatorKey: 'kind' });
 
 module.exports = User.discriminator('Tutor', TutorSchema);
