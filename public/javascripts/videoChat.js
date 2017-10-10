@@ -1,84 +1,136 @@
 var socket = io.connect();
 
-socket.on('connect', function (data) {
-    console.log('sending event: going live');
-    socket.emit('going live');
+socket.on("connect", function (data) {
+  console.log("sending event: going live");
+  socket.emit("goingLive");
 });
 
-
-socket.on('sessionRequest', function (data) {
-    var pop = confirm(data.name + ' is requesting tutoring for: ' + data.minutes + ' minutes?');
-    if (pop) {
-        socket.emit('sessionAccepted', data.id);
-    } else {
-        socket.emit('sessionRejected', data.id);
-    }
+socket.on("sessionRequest", function (data) {
+  var pop = confirm(
+    data.name + " is requesting tutoring for: " + data.minutes + " minutes?"
+  );
+  if (pop) {
+    socket.emit("sessionAccepted", data.id);
+  } else {
+    socket.emit("sessionRejected", data.id);
+  }
 });
 
-socket.on('sessionstart', function (data) {
-    alert('start');
-    setupWebRTC(data.initiator);
+socket.on("sessionStart", function (data) {
+  setupWebRTC(data.initiator);
 });
-
 
 class SignalingCtrl {
-    constructor() {
-        this.onPeerICE = null;
-        this.onSDPoffer = null;
-        this.onSDPanswer = null;
+  constructor() {
+    this.onmessage = null;
+    socket.on("message", d => this.onmessage(d));
+  }
 
-        socket.on('icecandidate', d => this.onPeerICE(d));
-        socket.on('SDPoffer', d => this.onSDPoffer(d));
-        socket.on('SDPanswer', d => this.onSDPanswer(d));
-
-    }
-
-    send(type, data) {
-        socket.emit(type, data);
-    }
-
+  send(type, data) {
+    socket.emit("message", { type: type, data: data });
+  }
 }
 
 async function setupWebRTC(initiator) {
-    let v = document.getElementById('rtc_video');
-    let local_video = document.getElementById('my_video');
-    let configuration = { 'iceServers': [{ 'urls': 'stun:stun.example.org' }] };
-    let rpc = new SignalingCtrl();
-    let pc = new RTCPeerConnection(configuration);
-    window.pc1 = pc;
+  let remote_v = document.getElementById("rtc_video");
+  let local_v = document.getElementById("my_video");
+  let configuration = { iceServers: [{ urls: "stun:stun.example.org" }] };
+  let rpc = new SignalingCtrl();
+  let pc = null;
+  let stream = null;
+  let mediaConstraints = {
+    video: true,
+    audio: false
+  };
+  let sdpConstraints = {
+    offerToReceiveAudio: false,
+    offerToReceiveVideo: true
+  };
+
+  rpc.onmessage = function (msg) {
+    console.log(`got msg ${msg.type}`);
+    switch (msg.type) {
+      case "SDPoffer":
+        handleOffer(msg.data);
+        break;
+      case "SDPanswer":
+        addAnswer(msg.data);
+        break;
+      case "icecandidate":
+        addRICE(msg.data);
+        break;
+      default:
+        console.log("unknown message", msg.type);
+        break;
+    }
+  };
 
 
 
-    let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+  if (initiator) {
+    stream = await navigator.mediaDevices.getUserMedia(mediaConstraints);
+    pc = new RTCPeerConnection(configuration);
     stream.getTracks().forEach(track => pc.addTrack(track, stream));
-    local_video.srcObject = stream;
+    local_v.srcObject = stream;
 
-    pc.oniceconnectionstatechange = e => console.log('pc', pc.iceConnectionState);
-    pc.onicecandidate = e => rpc.send('icecandidate', { candidate: e.candidate });
-    pc.oniceconnectionstatechange = e => console.log('pc', pc.iceConnectionState);
-    pc.onnegotiationneeded = async e => {
-        if (!initiator) return;
-        await pc.setLocalDescription(await pc.createOffer({ offerToReceiveAudio: 0, offerToReceiveVideo: 1 }));
-        rpc.send('SDPoffer', { sdp: pc.localDescription });
+    pc.onicecandidate = handleICEcandidate;
+    pc.oniceconnectionstatechange = e => console.log("ice state: ", pc.iceConnectionState);
+    pc.onnegotiationneeded = createOffer;
+    pc.ontrack = e => {
+      console.log(e.streams);
+      remote_v.srcObject = e.streams[0];
     };
+  }
 
-    rpc.onPeerICE = e => { if (e && e.candidate) pc.addIceCandidate(new RTCIceCandidate(e.candidate)) };
-    rpc.onSDPoffer = async offer => {
-        await pc.setRemoteDescription(new RTCSessionDescription(offer.sdp));
-        await pc.setLocalDescription(await pc.createAnswer({ offerToReceiveAudio: 0, offerToReceiveVideo: 1 }));
-        rpc.send('SDPanswer', { sdp: pc.localDescription });
-    }
-    rpc.onSDPanswer = async offer => {
-        await pc.setRemoteDescription(new RTCSessionDescription(offer.sdp));
+ 
+
+  async function createOffer() {
+    if (!initiator) return;
+    await pc.setLocalDescription(await pc.createOffer(sdpConstraints));
+    rpc.send("SDPoffer", { sdp: pc.localDescription });
+  }
+
+  function handleICEcandidate(evt) {
+    if (!evt.candidate) return;
+    console.log("adding ice for self", evt.target.iceGatheringState);
+    rpc.send("icecandidate", { candidate: evt.candidate });
+  }
+
+  async function addRICE(d) {
+    console.log("adding remote ice");
+    await pc.addIceCandidate(new RTCIceCandidate(d.candidate));
+  }
+
+  async function handleOffer(data) {
+    console.log("got remote offer");
+    if (!pc) {
+      pc = new RTCPeerConnection(configuration);
+      pc.onicecandidate = handleICEcandidate;
+      pc.oniceconnectionstatechange = e => console.log("ice state: ", pc.iceConnectionState);
+      pc.onnegotiationneeded = createOffer;
+      pc.ontrack = e => {
+        console.log(e.streams);
+        remote_v.srcObject = e.streams[0];
+      };
     }
 
-    pc.ontrack = e => v.srcObject = e.streams[0];
+    await pc.setRemoteDescription(new RTCSessionDescription(data.sdp));
+    stream = await navigator.mediaDevices.getUserMedia(mediaConstraints);
+    stream.getTracks().forEach(track => pc.addTrack(track, stream));
+    local_v.srcObject = stream;
+    await pc.setLocalDescription(await pc.createAnswer(sdpConstraints));
+    console.log('answer sent');
+    rpc.send("SDPanswer", { sdp: pc.localDescription });
+
+  }
+
+  async function addAnswer(answer) {
+    console.log("got answer");
+    await pc.setRemoteDescription(new RTCSessionDescription(answer.sdp));
+  }
 
 
 }
-
-
-
 
 // function setupWebRTC(initiator) {
 //     let v = document.getElementById('rtc_video');
@@ -87,7 +139,7 @@ async function setupWebRTC(initiator) {
 //     let configuration = { 'iceServers': [{ 'urls': 'stun:stun.example.org' }] };
 //     let pc = new RTCPeerConnection(configuration);
 //     let stack = [];
-//     window.pc = pc; 
+//     window.pc = pc;
 //     function unloadStack() {
 //         let t = null;
 //         while (t = stack.shift()) {
@@ -95,7 +147,6 @@ async function setupWebRTC(initiator) {
 //             pc.e => pc.addIceCandidate(e)Candidate(new RTCIceCandidate(t.candidate)).catch(logErr);
 //         }
 //     }
-
 
 //     //when get ice tell remote peer
 //     pc.onicecandidate = e => {
@@ -120,11 +171,9 @@ async function setupWebRTC(initiator) {
 //         }
 //     }
 
-
 //     signalCtrl.onPeerICE = e => pc.addIceCandidate(e);   //when get ice from remote peer add it
 //     signalCtrl.onSDPoffer = debounce(createAnswer);   //when and if get an offer reply with answer
 //     signalCtrl.onSDPanswer = debounce(answerHandler);   //if get an answer add it
-
 
 //     function addIce(e) {
 //         console.log('got ice candidate');
@@ -168,15 +217,15 @@ async function setupWebRTC(initiator) {
 // }
 
 function debounce(func) {
-    let p = Promise.resolve();
+  let p = Promise.resolve();
 
-    return function (x) {
-        p = p.then(() => func(x));
-    }
+  return function (x) {
+    p = p.then(() => func(x));
+  };
 }
 
 function logErr(err) {
-    console.log(err);
+  console.log(err);
 }
 // var signalingChannel = new SignalingChannel();
 // var configuration = {

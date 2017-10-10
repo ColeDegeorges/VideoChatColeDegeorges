@@ -38,11 +38,7 @@ function renderTutors(data) {
 }
 socket.on('connect', () => {
     console.log('connected getting all available tutors');
-    socket.emit('getTutors', [], (data)=>{
-        console.log('got data');
-        console.log(data);
-        renderTutors(data);
-    });
+    socket.emit('getTutors');
 });
 
 socket.on('tutorsChanged', function(data){

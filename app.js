@@ -14,7 +14,7 @@ const MongoStore = require('connect-mongo')(session);
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost/node-auth')
+mongoose.connect('mongodb://localhost/node-auth', { useMongoClient: true })
 .then(() =>  console.log('connection succesful'))
 .catch((err) => console.error(err));
 

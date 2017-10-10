@@ -55,7 +55,8 @@ const nameValidate = [{
 const UserSchema = new mongoose.Schema({
     email: { type: String, unique: true, validate: emailValidate, required: true, lowercase: true, trim: true },
     firstName: { type: String, validate: nameValidate, required: true, trim: true },
-    lastName: { type: String, validate: nameValidate, required: true, trim: true }
+    lastName: { type: String, validate: nameValidate, required: true, trim: true },
+    tutor: { type: Boolean, defautl: false },
 }, { discriminatorKey: 'kind', timestamps: true });
 
 

@@ -109,6 +109,7 @@ header .folded:hover .hover_menu a:hover {
     width:100%;
     height: 100%;
     background-color: #000;
+    max-height: 700px;
   }
   
   .top .v-wrap {
@@ -652,4 +653,48 @@ header .folded:hover .hover_menu a:hover {
     margin-bottom: 4px;
     color: #95989A;
   }
+}
+
+#historyPage {
+  .container {
+    flex-direction: column;
+  }
+  h1 {
+    text-align: center;
+    margin-top: 40px;
+  }
+  .sessions {
+    margin: auto;
+    max-width: 800px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+  }
+  
+  .session {
+    display: flex;
+    align-items: center;
+    background-color: #ddd;
+    border-radius: 2px;
+    font-size: 22px;
+    margin-top: 10px;
+  }
+  
+  .session > * {
+    margin: 8px ;
+  }
+  
+  .session span {
+    color: #888;
+  }
+  .video {
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+  }
+  
+  .date {
+    margin-left: auto;
+    margin-right: 20px;
+  }
+  
 }
