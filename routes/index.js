@@ -3,6 +3,7 @@ var router = express.Router();
 var authCtrl = require('../controllers/AuthCtrl');
 var tutorsCtrl = require('../controllers/TutorsCtrl');
 var historyCtrl = require('../controllers/HistoryCtrl');
+var profileCtrl = require('../controllers/ProfileCtrl');
 var middlewares = require('../controllers/middlewares');
 
 /* GET home page. */
@@ -28,6 +29,8 @@ router.post('/tutors/:id/request', middlewares.isAuthenticated, tutorsCtrl.sessi
 router.get('/golive', middlewares.isAuthenticated, tutorsCtrl.goLive);
 
 router.get('/history', middlewares.isAuthenticated, historyCtrl.index);
+
+router.get('/myprofile', middlewares.isAuthenticated, profileCtrl.index);
 
 
 module.exports = router;
