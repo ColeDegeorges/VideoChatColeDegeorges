@@ -1,0 +1,58 @@
+html
+	link(href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css", rel="stylesheet")
+
+	body
+		.container
+			.row-fluid
+				form.form-horizontal
+					fieldset
+						#legend
+							legend Payment
+						.control-group
+							label.control-label(for="username") Card Holder's Name
+							.controls
+								input#username.input-xlarge(type="text", name="username", placeholder="")
+						.control-group
+							label.control-label(for="email") Card Number
+							.controls
+								input#email.input-xlarge(type="text", name="email", placeholder="")
+						.control-group
+							label.control-label(for="password") Card Expiry Date
+							.controls
+								select#expiry_month.span3(name="expiry_month")
+									option
+									option(value="01") Jan (01)
+									option(value="02") Feb (02)
+									option(value="03") Mar (03)
+									option(value="04") Apr (04)
+									option(value="05") May (05)
+									option(value="06") June (06)
+									option(value="07") July (07)
+									option(value="08") Aug (08)
+									option(value="09") Sep (09)
+									option(value="10") Oct (10)
+									| 1
+									option(value="11") Nov (11)
+									option(value="12") Dec (12)
+								select.span2(name="expiry_year")
+									option(value="13") 2017
+									option(value="14") 2018
+									option(value="15") 2019
+									option(value="16") 2020
+									option(value="17") 2021
+									option(value="18") 2022
+									option(value="19") 2023
+									option(value="20") 2024
+
+						.control-group
+							label.control-label(for="password_confirm") Card CVV
+							.controls
+								input#password_confirm.span2(type="password", name="password_confirm", placeholder="")
+						.control-group
+							.controls
+								label.checkbox(for="save_card")
+									input#save_card(type="checkbox", value="option1")
+									|                 Save card on file?
+						.control-group
+							.controls
+								button.btn.btn-success Pay Now
