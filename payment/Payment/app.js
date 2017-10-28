@@ -24,40 +24,6 @@ app.get('/paysuccess', function(req, res) {
   });
 });
 
-// app.post('/charge', (req, res) => {
-//   const amount = 10000;
-//
-//   stripe.customers.create({
-//     email: req.body.stripeEmail,
-//     source: req.body.stripeToken
-//   })
-//   .then(customer => stripe.charges.create({
-//     amount,
-//     description: 'Web Development Ebook',
-//     currency: 'usd',
-//     customer: customer.id
-//   }))
-//   .then(charge => res.render('success'));
-// });
-
-// app.post('/charge', function(req, res) {
-//   var token =  req.body.stripeToken;
-//   var chargeAmount = req.body.chargeAmount;
-//   var charge = stripe.charges.create({
-//       amount: chargeAmount,
-//       currency: "usd",
-//       source: token
-//     }, function(err, charge) {
-//       if(err & err.type === "StripeCardError") {
-//           console.log("Card declined");
-//       }
-//   });
-//   console.log("Payment successful");
-//   res.redirect('/paysuccess');
-//
-// });
-
-
 app.post('/charge', function(req, res) {
   const amount = 5000;
   var token =  req.body.stripeToken;
