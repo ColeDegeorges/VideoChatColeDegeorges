@@ -7,6 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('myapp:server');
 var https = require('https');
+var http = require('http');
 var fs = require('fs');
 var path = require('path');
 /**
@@ -32,7 +33,8 @@ var options = {
   rejectUnauthorized: false
 };
 
-var server = https.createServer(options, app);
+var serverSSL = https.createServer(options, app);
+var server = http.createServer(app);
 let socketio = require('./websocket');
 socketio.attachServer(server);
 
@@ -40,7 +42,12 @@ socketio.attachServer(server);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+if (process.env.NODE_ENV == 'production') {
+  serverSSL.listen(port);
+} else {
+  server.listen(port);
+}
+
 server.on('error', onError);
 server.on('listening', onListening);
 

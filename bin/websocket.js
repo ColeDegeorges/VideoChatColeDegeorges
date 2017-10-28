@@ -6,6 +6,8 @@ let Tutor = require("../models/Tutor");
 let User = require("../models/User");
 let TutorSession = require("../models/Session");
 
+let Payment = require("../controllers/Payment");
+
 io.use((socket, next) => {
   session(socket.request, socket.request.res, next);
 });
@@ -58,12 +60,13 @@ async function prepareSocket(s) {
   };
 }
 
-async function requestTutor(tutor_id, user_id, len, price) {
+async function requestTutor(tutor_id, user_id, len, price, stripeToken) {
   let ts = new TutorSession();
   ts.tutor_id = tutor_id;
   ts.user_id = user_id;
   ts.duration = len;
   ts.price = price;
+  ts.stripeToken = stripeToken;
   await ts.setStatus("pending");
   await ts.save();
 
@@ -72,8 +75,9 @@ async function requestTutor(tutor_id, user_id, len, price) {
   });
 
   if (!t_socket) return;
+  let userFirstName = (await User.findById(user_id)).firstName;
   t_socket.emit("sessionRequest", {
-    name: await User.findById(user_id).firstName,
+    name: userFirstName,
     minutes: ts.duration,
     id: ts.id
   });
@@ -107,6 +111,9 @@ async function sessionAccepted(id, cb) {
 
   let ts = await TutorSession.findById(id);
   await ts.setStatus("insession");
+
+  let amount = Math.ceil(Number(ts.price) * Number(ts.duration)/60) * 100;
+  Payment.charge(ts.stripeToken, amount);
 
   startWebRTC(ts);
 }

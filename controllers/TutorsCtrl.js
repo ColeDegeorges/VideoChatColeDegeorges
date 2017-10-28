@@ -32,12 +32,25 @@ var tutorsController = {
     //check if has payment then reidrect to video page
     //check if tutor is online else send invitation & wait for to be online
     //if both are true then direct to video page and wait for tutor to accept
+    var tutor = await Tutor.findById(req.params.tutorId);
+    if (!tutor || tutor.status !== "available") {
+      res.redirect("back");
+    } else {
+      let price = Math.ceil(Number(tutor.price) * Number(req.body.session_len)/60);
+      webSocket.requestTutor(tutor.id, req.user.id, req.body.session_len, tutor.price, req.body.stripeToken);
+      res.render("videoChat");
+    }
+  },
+
+  async checkout(req, res) {
     var tutor = await Tutor.findById(req.params.id);
     if (!tutor || tutor.status !== "available") {
       res.redirect("back");
     } else {
-      webSocket.requestTutor(tutor.id, req.user.id, req.body.session_len, tutor.price);
-      res.render("videoChat");
+      res.locals.amount = Math.ceil(Number(tutor.price) * Number(req.body.session_len)/60);
+      res.locals.session_len = Number(req.body.session_len);
+      res.locals.tutorId = tutor.id;
+      res.render("checkout");
     }
   }
 };

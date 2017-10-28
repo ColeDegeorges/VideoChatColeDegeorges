@@ -12,15 +12,26 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
 mongoose.Promise = global.Promise;
+let m;
+if (process.env.NODE_ENV == 'production') {
+  m = mongoose.connect('mongodb://vhcat101:4900chat@ds035603.mlab.com:35603/tutoringsite', { useMongoClient: true });
+} else {
+  m = mongoose.connect('mongodb://localhost/node-auth', { useMongoClient: true });
+}
 
-mongoose.connect('mongodb://localhost/node-auth', { useMongoClient: true })
-.then(() =>  console.log('connection succesful'))
+m.then(() =>  console.log('connection succesful'))
 .catch((err) => console.error(err));
 
 var index = require('./routes/index');
 
 var app = express();
 
+var lessMiddleware = require('less-middleware');
+app.use(lessMiddleware(__dirname+'/public/',{
+  debug: true,
+  dest: __dirname+'/public/',
+  force: true
+}));
 
 
 

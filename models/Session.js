@@ -11,7 +11,8 @@ const TutorSessionSchema = new mongoose.Schema(
     status: { type: String, enum: statuses },
     duration: { type: Number, required: true },
     startTime: { type: Date },
-    endTime: { type: Date }
+    endTime: { type: Date },
+    stripeToken: { type: String}
   },
   { timestamps: true }
 );

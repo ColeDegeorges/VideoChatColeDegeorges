@@ -36,7 +36,7 @@ const TutorSchema = new mongoose.Schema(
     picture: { type: String, default: "/images/default_profile_pic.jpg" },
     college: { type: String, validate: { validator: () => true } },
     languages: { type: Array, validate: { validator: () => true } },
-    price: { type: Number, default: 0 },
+    price: { type: Number, default: 40 },
     status: { type: String, default: "offline" }
   },
   { discriminatorKey: "kind" }
