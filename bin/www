@@ -43,7 +43,8 @@ socketio.attachServer(server);
  */
 
 if (process.env.NODE_ENV == 'production') {
-  serverSSL.listen(port);
+  // serverSSL.listen(port);
+  server.listen(port);
 } else {
   server.listen(port);
 }
