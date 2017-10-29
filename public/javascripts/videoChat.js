@@ -141,6 +141,7 @@ async function setupWebRTC(initiator) {
     }
     try {
       await pc.setRemoteDescription(new RTCSessionDescription(data.sdp));
+      debugger;
       stream = await navigator.mediaDevices.getUserMedia(mediaConstraints);
       stream.getTracks().forEach(track => pc.addTrack(track, stream));
       local_v.srcObject = stream;
