@@ -43,9 +43,10 @@ async function setupWebRTC(initiator) {
       },
       {
         urls: "stun:stun1.l.google.com:19302"
-      }, {
-        urls: "stun:stun2.l.google.com:19302"
-      }, 
+      },
+      //  {
+      //   urls: "stun:stun2.l.google.com:19302"
+      // }, 
       // {
       //   urls: "stun:stun3.l.google.com:19302"
       // }, {
@@ -65,10 +66,10 @@ async function setupWebRTC(initiator) {
   let stream = null;
   let mediaConstraints = {
     video: true,
-    audio: false
+    audio: true
   };
   let sdpConstraints = {
-    offerToReceiveAudio: false,
+    offerToReceiveAudio: true,
     offerToReceiveVideo: true
   };
 
@@ -138,15 +139,17 @@ async function setupWebRTC(initiator) {
         remote_v.srcObject = e.streams[0];
       };
     }
-
-    await pc.setRemoteDescription(new RTCSessionDescription(data.sdp));
-    stream = await navigator.mediaDevices.getUserMedia(mediaConstraints);
-    stream.getTracks().forEach(track => pc.addTrack(track, stream));
-    local_v.srcObject = stream;
-    await pc.setLocalDescription(await pc.createAnswer(sdpConstraints));
-    console.log('answer sent');
-    rpc.send("SDPanswer", { sdp: pc.localDescription });
-
+    try {
+      await pc.setRemoteDescription(new RTCSessionDescription(data.sdp));
+      stream = await navigator.mediaDevices.getUserMedia(mediaConstraints);
+      stream.getTracks().forEach(track => pc.addTrack(track, stream));
+      local_v.srcObject = stream;
+      await pc.setLocalDescription(await pc.createAnswer(sdpConstraints));
+      console.log('answer sent');
+      rpc.send("SDPanswer", { sdp: pc.localDescription });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   async function addAnswer(answer) {
