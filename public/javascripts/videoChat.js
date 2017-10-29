@@ -34,7 +34,19 @@ class SignalingCtrl {
 async function setupWebRTC(initiator) {
   let remote_v = document.getElementById("rtc_video");
   let local_v = document.getElementById("my_video");
-  let configuration = { iceServers: [{ urls: "stun:stun.example.org" }] };
+  let configuration = {
+    iceServers: [{
+      urls: "turn:numb.viagenie.ca",
+      username: "myemailum14@gmail.com",
+      credential: "thunder1111"
+    }, {
+      urls: "stun:stun.example.org",
+      username: "myemailum14@gmail.com",
+      credential: "thunder1111"
+    }, {
+      urls: "stun:numb.viagenie.ca"
+    }]
+  };
   let rpc = new SignalingCtrl();
   let pc = null;
   let stream = null;
@@ -82,7 +94,7 @@ async function setupWebRTC(initiator) {
     };
   }
 
- 
+
 
   async function createOffer() {
     if (!initiator) return;
