@@ -37,15 +37,15 @@ async function setupWebRTC(initiator) {
   let configuration = {
     iceServers: [
       {
-        urls: "stun:stun1.l.google.com:19302"
-      }, {
-        urls: "stun:stun2.l.google.com:19302"
-      }, 
-      {
         urls: "stun:numb.viagenie.ca",
         username: "myemailum14@gmail.com",
         credential: "thunder1111"
       },
+      {
+        urls: "stun:stun1.l.google.com:19302"
+      }, {
+        urls: "stun:stun2.l.google.com:19302"
+      }, 
       // {
       //   urls: "stun:stun3.l.google.com:19302"
       // }, {
