@@ -14,7 +14,7 @@ const MongoStore = require('connect-mongo')(session);
 mongoose.Promise = global.Promise;
 let m;
 if (process.env.NODE_ENV == 'production') {
-  m = mongoose.connect('mongodb://vchat101:4900chat@ds035603.mlab.com:35603/tutoringsite', { useMongoClient: true });
+  m = mongoose.connect('mongodb://microwave:kk123kkh4@ds241059.mlab.com:41059/videochat100', { useMongoClient: true });
 } else {
   m = mongoose.connect('mongodb://localhost/node-auth', { useMongoClient: true });
 }
@@ -50,7 +50,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
- 
+
 
 //passportjs
 let sessionMiddleware = session({
