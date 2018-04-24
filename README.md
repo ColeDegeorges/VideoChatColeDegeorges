@@ -135,50 +135,50 @@ Initial Release
 
   ### -	The API info
 
-      •WebRTC
+      • WebRTC
 
-            oThe video is done using WebRTC
+            o The video is done using WebRTC
 
-            oWebRTC is a free, open project that provides browsers and mobile applications with Real-Time
+            o WebRTC is a free, open project that provides browsers and mobile applications with Real-Time
               Communication (RTC) capabilities via simple APIs. It’s low cost with high quality audio and video
               communication and data.
 
-            oWebRTC’s mission is to implement rich and high quality RTC applications for browsers, mobile, and IoT
+            o WebRTC’s mission is to implement rich and high quality RTC applications for browsers, mobile, and IoT
               (Internet of Things) devices, allowing them to communicate via a common set of protocols.
 
-            oMany browsers and operating systems like Chrome, Firefox, Opera, Android, and iOS are supported.
+            o Many browsers and operating systems like Chrome, Firefox, Opera, Android, and iOS are supported.
 
-            oFor more information about WebRTC visit:  https://webrtc.org/start/
+            o For more information about WebRTC visit:  https://webrtc.org/start/
 
-      •	Stripe
+      • Stripe
 
-            oThe payment method is done using Stripe
+            o The payment method is done using Stripe
 
-            oStripe is the best way to accept payments online and in mobile apps. It aims to expand internet
+            o Stripe is the best way to accept payments online and in mobile apps. It aims to expand internet
               commerce by making it easier to process transactions and manage an online business. They want to
               increase the GDP (Gross Domestic Product) of the internet.
 
-            oCurrently Stripe processes billions of dollars every year for thousands of businesses from start-ups
+            o Currently Stripe processes billions of dollars every year for thousands of businesses from start-ups
               to Fortune 500 companies.
 
-            oMany web and mobile businesses using Stripe includes Twitter, Kickstarter, Shopify, Salesforce, Lyft,
+            o Many web and mobile businesses using Stripe includes Twitter, Kickstarter, Shopify, Salesforce, Lyft,
               and many more.
 
-          oFor more information about Stripe visit: https://stripe.com/docs
+          o For more information about Stripe visit: https://stripe.com/docs
 
 
 
   ### -	Links to documentations for Node.js
 
-      •This application is coded using Node.js. (ver. 8.3.0) – version used in project
+      • This application is coded using Node.js. (ver. 8.3.0) – version used in project
 
-      •Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.js uses an event-driven,
+      • Node.js is a JavaScript runtime built on Chrome’s V8 JavaScript engine. Node.js uses an event-driven,
         non-blocking I/O model that makes it lightweight and efficient. Node.js package ecosystem, npm, is the
         largest ecosystem of open source libraries in the world.
 
-      •To download Node.js visit: https://nodejs.org/en/download/
+      • To download Node.js visit: https://nodejs.org/en/download/
 
-      •Link to documentations for Node.js: https://nodejs.org/en/docs/
+      • Link to documentations for Node.js: https://nodejs.org/en/docs/
 
 
 
