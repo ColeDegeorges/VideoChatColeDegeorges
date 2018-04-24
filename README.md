@@ -22,114 +22,114 @@ Initial Release
 
   ### - What the project is
 
-      •VideoChat is a software application project using Node.js where tutors are able to video chat with students
+      • VideoChat is a software application project using Node.js where tutors are able to video chat with students
         using WebRTC and websockets. The purpose of the creation of VideoChat is allow students to be able obtain
         tutoring anytime they want without the worry of not being able to make it to their school’s scheduled
         tutoring sessions. The same goes for the tutors because of both of their busy schedules.
 
-      •Tutors will be able to stream in real time and communicate in a one on one session with the students aiding
+      • Tutors will be able to stream in real time and communicate in a one on one session with the students aiding
         and guiding them through their coursework where they need assistance in. For each session a tutor has with
         their tutee, there is a fee. The price depends on the length of the tutoring time.
 
-      •The targeted audience of this application is towards college students, but it’s not only limited to them.
+      • The targeted audience of this application is towards college students, but it’s not only limited to them.
 
 
 
   ### -	What the features are
 
-      •Go Live Feature (For Tutors only)
+      • Go Live Feature (For Tutors only)
 
-            oThis feature is only available for tutors. When tutors click the Go Live page they are brought to page
+            o This feature is only available for tutors. When tutors click the Go Live page they are brought to page
               where their cameras/webcams are activated for live streaming. (Work needed how to save stream after
               session is done for later viewing purposes)
 
-      •Tutors Available Now List and Tutors profile
+      • Tutors Available Now List and Tutors profile
 
-            oThis feature shows which tutors are currently available whom are currently in the Go Live page. It will
+            o This feature shows which tutors are currently available whom are currently in the Go Live page. It will
               be easier for students to find which tutors are currently available without needing to search. It will
               show the name of the tutor and subject they teach. Clicking on the tutor will bring you to the tutors
               profile page where it gives a more in depth information of the tutor. (Profile Page needs a lot of work)
 
-      •Main Page/Tutor Page and search tutor (Needs Work)
+      • Main Page/Tutor Page and search tutor (Needs Work)
 
-            oOnce logged in, clicking the main page and tutor page are the same it brings you to the tutor page. On
+            o Once logged in, clicking the main page and tutor page are the same it brings you to the tutor page. On
               this page, both students and tutors are able to search and look up tutors that fit their academic needs.
               (Searching needs work)
 
-      •History Page (Needs work)
+      • History Page (Needs work)
 
-            oThis feature will show whom the student had a tutoring session with and vice versa, with information
+            o This feature will show whom the student had a tutoring session with and vice versa, with information
               about each session. (History needs work currently a dummy page)
 
-      •Notes
+      • Notes
 
-            oThis feature allows both the tutor and student to take notes while the session is live.
+            o This feature allows both the tutor and student to take notes while the session is live.
 
-      •	Chatbox (Needs work)
+      • Chatbox (Needs work)
 
-            oThis feature allows both the tutor and student to communicate to one another by typing. It should be able
+            o This feature allows both the tutor and student to communicate to one another by typing. It should be able
               to upload and download files (Currently a dummy needs work to implement)
 
 
 
   ### -	How to install it
 
-      •Accessing the code base
+      • Accessing the code base
 
-            1.A GitHub account it needed to access the code base
+            1. A GitHub account it needed to access the code base
 
-            2.After obtaining an account, The project manager will invite the team for access in a private
-              repository
+            2. After obtaining an account, The project manager will invite the team for access in a private
+                repository
 
-      •How to clone
+      • How to clone
 
-            1.Follow the steps on how to clone a repository here:
+            1. Follow the steps on how to clone a repository here:
 
                 https://help.github.com/articles/cloning-a-repository/
 
                 There are directions for different platforms for Mac, Windows, and Linux. Follow the directions for
                 your operating system.
 
-      •How to write to it
+      • How to write to it
 
-            1.Once you clone the repository to your desktop, you can edit them in a text editor like Sublime Text,
+            1. Once you clone the repository to your desktop, you can edit them in a text editor like Sublime Text,
                 Notepad++, Atom, and many more. (Note: You should copy the code into a separate repository for testing
                 and DO NOT REWRITE THE CODE!)
 
-            2.When you are done editing save your file, open command prompt for Windows or Terminal for Mac/Linux.
+            2. When you are done editing save your file, open command prompt for Windows or Terminal for Mac/Linux.
                 ( you need to download git if you don’t have it here: https://git-scm.com/downloads)
 
-            3.To push your changes to the code back to Github repository you write:
+            3. To push your changes to the code back to Github repository you write:
 
                 •	$ git add –all
                 •	$ git commit –m “Initial commit”
                 •	$ git push –u origin master
 
-      •How to test
+      • How to test
 
-            1.To test the code you need to create a Heroku account here: https://www.heroku.com/
+            1. To test the code you need to create a Heroku account here: https://www.heroku.com/
 
-            2.Name your project on Heroku and connect it to repository on GitHub
+            2. Name your project on Heroku and connect it to repository on GitHub
 
-            3.Click open app to start testing
+            3. Click open app to start testing
 
-            4.To keep track of a database to see users and sessions create an account on mLab here:
+            4. To keep track of a database to see users and sessions create an account on mLab here:
                 https://mlab.com/
 
-            5.Name your project on mLab and create a username and password for the project
+            5. Name your project on mLab and create a username and password for the project
 
-            6.Copy the MongoDB URI from mLab and replace it in the app.js where it says:
+            6. Copy the MongoDB URI from mLab and replace it in the app.js where it says:
                 m = mongoose.connect(‘replace here’,{  useMongoClient: true });
                 (Make sure you put your username and password where it says <dbuser> and <dbpassword>)
 
-            7.Do the same on Heroku copy the MongoDB URI got to Settings and click Reveal Config Vars
+            7. Do the same on Heroku copy the MongoDB URI got to Settings and click Reveal Config Vars
 
-            8.Type MONGODB_URI where it says KEY and Put the MongoDB URI in value (Make sure you put your
+            8. Type MONGODB_URI where it says KEY and Put the MongoDB URI in value (Make sure you put your
                 username and password where it says <dbuser> and <dbpassword>)
 
-            9.After all that is done test the app again and you should be able to see updates on mLab
+            9. After all that is done test the app again and you should be able to see updates on mLab
 
-      •	How to deploy (needs work)
+      • How to deploy (needs work)
 
 
 
