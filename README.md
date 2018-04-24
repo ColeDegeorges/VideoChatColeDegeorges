@@ -23,13 +23,13 @@ Initial Release
   ### - What the project is
 
       •	VideoChat is a software application project using Node.js where tutors are able to video chat with students
-       using WebRTC and websockets. The purpose of the creation of VideoChat is allow students to be able obtain
-       tutoring anytime they want without the worry of not being able to make it to their school’s scheduled
-       tutoring sessions. The same goes for the tutors because of both of their busy schedules.
+        using WebRTC and websockets. The purpose of the creation of VideoChat is allow students to be able obtain
+        tutoring anytime they want without the worry of not being able to make it to their school’s scheduled
+        tutoring sessions. The same goes for the tutors because of both of their busy schedules.
 
       •	Tutors will be able to stream in real time and communicate in a one on one session with the students aiding
-      and guiding them through their coursework where they need assistance in. For each session a tutor has with
-      their tutee, there is a fee. The price depends on the length of the tutoring time.
+        and guiding them through their coursework where they need assistance in. For each session a tutor has with
+        their tutee, there is a fee. The price depends on the length of the tutoring time.
 
       •	The targeted audience of this application is towards college students, but it’s not only limited to them.
 
@@ -39,36 +39,36 @@ Initial Release
 
       •	Go Live Feature (For Tutors only)
 
-          o	This feature is only available for tutors. When tutors click the Go Live page they are brought to page
-          where their cameras/webcams are activated for live streaming. (Work needed how to save stream after session
-          is done for later viewing purposes)
+            o	This feature is only available for tutors. When tutors click the Go Live page they are brought to page
+              where their cameras/webcams are activated for live streaming. (Work needed how to save stream after session
+              is done for later viewing purposes)
 
       •	Tutors Available Now List and Tutors profile
 
-          o	This feature shows which tutors are currently available whom are currently in the Go Live page. It will
-          be easier for students to find which tutors are currently available without needing to search. It will show
-          the name of the tutor and subject they teach. Clicking on the tutor will bring you to the tutors profile
-          page where it gives a more in depth information of the tutor. (Profile Page needs a lot of work)
+            o	This feature shows which tutors are currently available whom are currently in the Go Live page. It will
+              be easier for students to find which tutors are currently available without needing to search. It will show
+              the name of the tutor and subject they teach. Clicking on the tutor will bring you to the tutors profile
+              page where it gives a more in depth information of the tutor. (Profile Page needs a lot of work)
 
       •	Main Page/Tutor Page and search tutor (Needs Work)
 
-          o	Once logged in, clicking the main page and tutor page are the same it brings you to the tutor page. On
-          this page, both students and tutors are able to search and look up tutors that fit their academic needs.
-          (Searching needs work)
+            o	Once logged in, clicking the main page and tutor page are the same it brings you to the tutor page. On
+              this page, both students and tutors are able to search and look up tutors that fit their academic needs.
+              (Searching needs work)
 
       •	History Page (Needs work)
 
-          o	This feature will show whom the student had a tutoring session with and vice versa, with information
-          about each session. (History needs work currently a dummy page)
+            o	This feature will show whom the student had a tutoring session with and vice versa, with information
+              about each session. (History needs work currently a dummy page)
 
       •	Notes
 
-          o	This feature allows both the tutor and student to take notes while the session is live.
+            o	This feature allows both the tutor and student to take notes while the session is live.
 
       •	Chatbox (Needs work)
 
-          o	This feature allows both the tutor and student to communicate to one another by typing. It should be able
-          to upload and download files (Currently a dummy needs work to implement)
+            o	This feature allows both the tutor and student to communicate to one another by typing. It should be able
+              to upload and download files (Currently a dummy needs work to implement)
 
 
 
@@ -76,59 +76,58 @@ Initial Release
 
       • Accessing the code base
 
-          1.	A GitHub account it needed to access the code base
+            1.	A GitHub account it needed to access the code base
 
-          2.	After obtaining an account, The project manager will invite the team for access in a private
-          repository
+            2.	After obtaining an account, The project manager will invite the team for access in a private
+              repository
 
       •	How to clone
 
-          1.	Follow the steps on how to clone a repository here:
+            1.	Follow the steps on how to clone a repository here:
 
-              https://help.github.com/articles/cloning-a-repository/
+                https://help.github.com/articles/cloning-a-repository/
 
-              There are directions for different platforms for Mac, Windows, and Linux. Follow the directions for
-              your operating system.
+                There are directions for different platforms for Mac, Windows, and Linux. Follow the directions for
+                your operating system.
 
       •	How to write to it
 
-          1.	Once you clone the repository to your desktop, you can edit them in a text editor like Sublime Text,
-          Notepad++, Atom, and many more. (Note: You should copy the code into a separate repository for testing and
-            DO NOT REWRITE THE CODE!)
+            1.	Once you clone the repository to your desktop, you can edit them in a text editor like Sublime Text,
+                Notepad++, Atom, and many more. (Note: You should copy the code into a separate repository for testing and
+                DO NOT REWRITE THE CODE!)
 
-          2.	When you are done editing save your file, open command prompt for Windows or Terminal for Mac/Linux.
-          ( you need to download git if you don’t have it here: https://git-scm.com/downloads)
+            2.	When you are done editing save your file, open command prompt for Windows or Terminal for Mac/Linux.
+                ( you need to download git if you don’t have it here: https://git-scm.com/downloads)
 
-          3.	To push your changes to the code back to Github repository you write:
+            3.	To push your changes to the code back to Github repository you write:
 
-              •	$ git add –all
-              •	$ git commit –m “Initial commit”
-              •	$ git push –u origin master
+                •	$ git add –all
+                •	$ git commit –m “Initial commit”
+                •	$ git push –u origin master
 
       •	How to test
 
-          1.	To test the code you need to create a Heroku account here: https://www.heroku.com/
+            1.	To test the code you need to create a Heroku account here: https://www.heroku.com/
 
-          2.	Name your project on Heroku and connect it to repository on GitHub
+            2.	Name your project on Heroku and connect it to repository on GitHub
 
-          3.	Click open app to start testing
+            3.	Click open app to start testing
 
-          4.	To keep track of a database to see users and sessions create an account on mLab here:
-          https://mlab.com/
+            4.	To keep track of a database to see users and sessions create an account on mLab here:
+                https://mlab.com/
 
-          5.	Name your project on mLab and create a username and password for the project
+            5.	Name your project on mLab and create a username and password for the project
 
-          6.	Copy the MongoDB URI from mLab and replace it in the app.js where it says:
-              m = mongoose.connect(‘replace here’,{  useMongoClient: true });
-              (Make sure you put your username and password where it says <dbuser> and <dbpassword>)
+            6.	Copy the MongoDB URI from mLab and replace it in the app.js where it says:
+                m = mongoose.connect(‘replace here’,{  useMongoClient: true });
+                (Make sure you put your username and password where it says <dbuser> and <dbpassword>)
 
-          7.	Do the same on Heroku copy the MongoDB URI got to Settings and click Reveal Config Vars
+            7.	Do the same on Heroku copy the MongoDB URI got to Settings and click Reveal Config Vars
 
+            8.	Type MONGODB_URI where it says KEY and Put the MongoDB URI in value (Make sure you put your
+                username and password where it says <dbuser> and <dbpassword>)
 
-          8.	Type MONGODB_URI where it says KEY and Put the MongoDB URI in value (Make sure you put your
-          username and password where it says <dbuser> and <dbpassword>)
-
-          9.	After all that is done test the app again and you should be able to see updates on mLab
+            9.	After all that is done test the app again and you should be able to see updates on mLab
 
       •	How to deploy (needs work)
 
@@ -138,32 +137,32 @@ Initial Release
 
       •	WebRTC
 
-          o	The video is done using WebRTC
+            o	The video is done using WebRTC
 
-          o	WebRTC is a free, open project that provides browsers and mobile applications with Real-Time
-          Communication (RTC) capabilities via simple APIs. It’s low cost with high quality audio and video
-          communication and data.
+            o	WebRTC is a free, open project that provides browsers and mobile applications with Real-Time
+              Communication (RTC) capabilities via simple APIs. It’s low cost with high quality audio and video
+              communication and data.
 
-          o	WebRTC’s mission is to implement rich and high quality RTC applications for browsers, mobile, and IoT
-          (Internet of Things) devices, allowing them to communicate via a common set of protocols.
+            o	WebRTC’s mission is to implement rich and high quality RTC applications for browsers, mobile, and IoT
+              (Internet of Things) devices, allowing them to communicate via a common set of protocols.
 
-          o	Many browsers and operating systems like Chrome, Firefox, Opera, Android, and iOS are supported.
+            o	Many browsers and operating systems like Chrome, Firefox, Opera, Android, and iOS are supported.
 
-          o	For more information about WebRTC visit:  https://webrtc.org/start/
+            o	For more information about WebRTC visit:  https://webrtc.org/start/
 
       •	Stripe
 
-          o	The payment method is done using Stripe
+            o	The payment method is done using Stripe
 
-          o	Stripe is the best way to accept payments online and in mobile apps. It aims to expand internet
-          commerce by making it easier to process transactions and manage an online business. They want to
-          increase the GDP (Gross Domestic Product) of the internet.
+            o	Stripe is the best way to accept payments online and in mobile apps. It aims to expand internet
+              commerce by making it easier to process transactions and manage an online business. They want to
+              increase the GDP (Gross Domestic Product) of the internet.
 
-          o	Currently Stripe processes billions of dollars every year for thousands of businesses from start-ups
-          to Fortune 500 companies.
+            o	Currently Stripe processes billions of dollars every year for thousands of businesses from start-ups
+              to Fortune 500 companies.
 
-          o	Many web and mobile businesses using Stripe includes Twitter, Kickstarter, Shopify, Salesforce, Lyft,
-          and many more.
+            o	Many web and mobile businesses using Stripe includes Twitter, Kickstarter, Shopify, Salesforce, Lyft,
+              and many more.
 
           o	For more information about Stripe visit: https://stripe.com/docs
 
@@ -186,52 +185,52 @@ Initial Release
   ### -	Links to documentation for dependencies the project works with
 
       •	body – parser (ver. 1.17.1) – version used in project
-          o	https://www.npmjs.com/package/body-parser
+              o	https://www.npmjs.com/package/body-parser
 
       •	connect – mongo (ver. 1.3.2) – version used in project
-          o	https://www.npmjs.com/package/connect-mongo
+              o	https://www.npmjs.com/package/connect-mongo
 
       •	cookie – parser (ver. 1.4.3) – version used in project
-          o	https://www.npmjs.com/package/cookie-parser
+              o	https://www.npmjs.com/package/cookie-parser
 
       •	debug (ver. 2.6.3) – version used in project
-          o	https://www.npmjs.com/package/debug
+              o	https://www.npmjs.com/package/debug
 
       •	express (ver. 4.15.5) – version used in project
-          o	https://www.npmjs.com/package/express
+              o	https://www.npmjs.com/package/express
 
       •	express – session (ver. 1.15.5) – version used in project
-          o	https://www.npmjs.com/package/express-session
+              o	https://www.npmjs.com/package/express-session
 
       •	less – middleware (ver. 2.2.0) – version used in project
-          o	https://www.npmjs.com/package/less-middleware
+              o	https://www.npmjs.com/package/less-middleware
 
       •	mongoose (ver. 4.11.12) – version used in project
-          o	https://www.npmjs.com/package/mongoose
+              o	https://www.npmjs.com/package/mongoose
 
       •	passport (ver. 0.4.0) – version used in project
-          o	https://www.npmjs.com/package/passport
+              o	https://www.npmjs.com/package/passport
 
       •	passport – local (ver. 1.0.0) – version used in project
-          o	https://www.npmjs.com/package/passport-local
+              o	https://www.npmjs.com/package/passport-local
 
       •	passport – local mongoose (ver. 4.2.1) – version used in project
-          o	https://www.npmjs.com/package/passport-local-mongoose
+              o	https://www.npmjs.com/package/passport-local-mongoose
 
       •	pug (ver. 2.0.0 – beta11) – version used in project
-          o	https://www.npmjs.com/package/pug
+              o	https://www.npmjs.com/package/pug
 
       •	serve – favicon (ver. 2.4.2) – version used in project
-          o	https://www.npmjs.com/package/serve-favicon
+              o	https://www.npmjs.com/package/serve-favicon
 
       •	socket.io (ver. 2.0.3) – version used in project
-          o	https://www.npmjs.com/package/socket.io
+              o	https://www.npmjs.com/package/socket.io
 
       •	stripe (ver. 5.2.0) – version used in project
-          o	https://www.npmjs.com/package/stripe
+              o	https://www.npmjs.com/package/stripe
 
       •	validator (ver. 8.2.0) – version used in project
-          o	https://www.npmjs.com/package/validator
+              o	https://www.npmjs.com/package/validator
 
 
 
