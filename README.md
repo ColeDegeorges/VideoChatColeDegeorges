@@ -78,7 +78,8 @@ Initial Release
 
           1.	A GitHub account it needed to access the code base
 
-          2.	After obtaining an account, The project manager will invite the team for access in a private repository
+          2.	After obtaining an account, The project manager will invite the team for access in a private
+          repository
 
       •	How to clone
 
@@ -124,8 +125,8 @@ Initial Release
           7.	Do the same on Heroku copy the MongoDB URI got to Settings and click Reveal Config Vars
 
 
-          8.	Type MONGODB_URI where it says KEY and Put the MongoDB URI in value (Make sure you put your username
-            and password where it says <dbuser> and <dbpassword>)
+          8.	Type MONGODB_URI where it says KEY and Put the MongoDB URI in value (Make sure you put your
+          username and password where it says <dbuser> and <dbpassword>)
 
           9.	After all that is done test the app again and you should be able to see updates on mLab
 
