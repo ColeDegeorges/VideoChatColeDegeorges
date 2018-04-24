@@ -22,10 +22,10 @@ Initial Release
 
   ### - What the project is
 
-      •	VideoChat is a software application project using Node.js where tutors are able to video chat with students
-        using WebRTC and websockets. The purpose of the creation of VideoChat is allow students to be able obtain
-        tutoring anytime they want without the worry of not being able to make it to their school’s scheduled
-        tutoring sessions. The same goes for the tutors because of both of their busy schedules.
+      •VideoChat is a software application project using Node.js where tutors are able to video chat with students
+            using WebRTC and websockets. The purpose of the creation of VideoChat is allow students to be able obtain
+            tutoring anytime they want without the worry of not being able to make it to their school’s scheduled
+            tutoring sessions. The same goes for the tutors because of both of their busy schedules.
 
       •	Tutors will be able to stream in real time and communicate in a one on one session with the students aiding
         and guiding them through their coursework where they need assistance in. For each session a tutor has with
@@ -85,7 +85,7 @@ Initial Release
 
             1.	Follow the steps on how to clone a repository here:
 
-                https://help.github.com/articles/cloning-a-repository/
+                [https://help.github.com/articles/cloning-a-repository/]
 
                 There are directions for different platforms for Mac, Windows, and Linux. Follow the directions for
                 your operating system.
@@ -97,7 +97,7 @@ Initial Release
                 DO NOT REWRITE THE CODE!)
 
             2.	When you are done editing save your file, open command prompt for Windows or Terminal for Mac/Linux.
-                ( you need to download git if you don’t have it here: https://git-scm.com/downloads)
+                ( you need to download git if you don’t have it here: [https://git-scm.com/downloads])
 
             3.	To push your changes to the code back to Github repository you write:
 
@@ -107,14 +107,14 @@ Initial Release
 
       •	How to test
 
-            1.	To test the code you need to create a Heroku account here: https://www.heroku.com/
+            1.	To test the code you need to create a Heroku account here: [https://www.heroku.com/]
 
             2.	Name your project on Heroku and connect it to repository on GitHub
 
             3.	Click open app to start testing
 
             4.	To keep track of a database to see users and sessions create an account on mLab here:
-                https://mlab.com/
+                [https://mlab.com/]
 
             5.	Name your project on mLab and create a username and password for the project
 
@@ -148,7 +148,7 @@ Initial Release
 
             o	Many browsers and operating systems like Chrome, Firefox, Opera, Android, and iOS are supported.
 
-            o	For more information about WebRTC visit:  https://webrtc.org/start/
+            o	For more information about WebRTC visit:  [https://webrtc.org/start/]
 
       •	Stripe
 
@@ -164,7 +164,7 @@ Initial Release
             o	Many web and mobile businesses using Stripe includes Twitter, Kickstarter, Shopify, Salesforce, Lyft,
               and many more.
 
-          o	For more information about Stripe visit: https://stripe.com/docs
+          o	For more information about Stripe visit: [https://stripe.com/docs]
 
 
 
@@ -176,61 +176,61 @@ Initial Release
       non-blocking I/O model that makes it lightweight and efficient. Node.js package ecosystem, npm, is the
       largest ecosystem of open source libraries in the world.
 
-      •	To download Node.js visit: https://nodejs.org/en/download/
+      •	To download Node.js visit: [https://nodejs.org/en/download/]
 
-      •	Link to documentations for Node.js: https://nodejs.org/en/docs/
+      •	Link to documentations for Node.js: [https://nodejs.org/en/docs/]
 
 
 
   ### -	Links to documentation for dependencies the project works with
 
       •	body – parser (ver. 1.17.1) – version used in project
-              o	https://www.npmjs.com/package/body-parser
+              o	[https://www.npmjs.com/package/body-parser]
 
       •	connect – mongo (ver. 1.3.2) – version used in project
-              o	https://www.npmjs.com/package/connect-mongo
+              o	[https://www.npmjs.com/package/connect-mongo]
 
       •	cookie – parser (ver. 1.4.3) – version used in project
-              o	https://www.npmjs.com/package/cookie-parser
+              o	[https://www.npmjs.com/package/cookie-parser]
 
       •	debug (ver. 2.6.3) – version used in project
-              o	https://www.npmjs.com/package/debug
+              o	[https://www.npmjs.com/package/debug]
 
       •	express (ver. 4.15.5) – version used in project
-              o	https://www.npmjs.com/package/express
+              o	[https://www.npmjs.com/package/express]
 
       •	express – session (ver. 1.15.5) – version used in project
-              o	https://www.npmjs.com/package/express-session
+              o	[https://www.npmjs.com/package/express-session]
 
       •	less – middleware (ver. 2.2.0) – version used in project
-              o	https://www.npmjs.com/package/less-middleware
+              o	[https://www.npmjs.com/package/less-middleware]
 
       •	mongoose (ver. 4.11.12) – version used in project
-              o	https://www.npmjs.com/package/mongoose
+              o	[https://www.npmjs.com/package/mongoose]
 
       •	passport (ver. 0.4.0) – version used in project
-              o	https://www.npmjs.com/package/passport
+              o	[https://www.npmjs.com/package/passport]
 
       •	passport – local (ver. 1.0.0) – version used in project
-              o	https://www.npmjs.com/package/passport-local
+              o	[https://www.npmjs.com/package/passport-local]
 
       •	passport – local mongoose (ver. 4.2.1) – version used in project
-              o	https://www.npmjs.com/package/passport-local-mongoose
+              o	[https://www.npmjs.com/package/passport-local-mongoose]
 
       •	pug (ver. 2.0.0 – beta11) – version used in project
-              o	https://www.npmjs.com/package/pug
+              o	[https://www.npmjs.com/package/pug]
 
       •	serve – favicon (ver. 2.4.2) – version used in project
-              o	https://www.npmjs.com/package/serve-favicon
+              o	[https://www.npmjs.com/package/serve-favicon]
 
       •	socket.io (ver. 2.0.3) – version used in project
-              o	https://www.npmjs.com/package/socket.io
+              o	[https://www.npmjs.com/package/socket.io]
 
       •	stripe (ver. 5.2.0) – version used in project
-              o	https://www.npmjs.com/package/stripe
+              o	[https://www.npmjs.com/package/stripe]
 
       •	validator (ver. 8.2.0) – version used in project
-              o	https://www.npmjs.com/package/validator
+              o	[https://www.npmjs.com/package/validator]
 
 
 
