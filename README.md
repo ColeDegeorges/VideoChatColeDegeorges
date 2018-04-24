@@ -236,12 +236,12 @@ Initial Release
 
   ### -	Known issues (work needs to be done)
 
-      •Work needs to be done on Go Live page. The video stream need to be saved for later uses. The chat box is
+      • Work needs to be done on Go Live page. The video stream need to be saved for later uses. The chat box is
         currently a dummy; work needs to be done to implement it. It should be able to upload and download files.
 
-      •On the Tutors/Main Page work needs to be done on the searching functions. The profile pages of the tutors
+      • On the Tutors/Main Page work needs to be done on the searching functions. The profile pages of the tutors
         and students pages also needs work done all repeating the same thing.
 
-      •The History page is currently a dummy page (needs work). The Billing and Dashboard page aren’t coded
+      • The History page is currently a dummy page (needs work). The Billing and Dashboard page aren’t coded
 
-      •Setting page (currently being worked on)
+      • Setting page (currently being worked on)
