@@ -40,15 +40,15 @@ Initial Release
       •Go Live Feature (For Tutors only)
 
             oThis feature is only available for tutors. When tutors click the Go Live page they are brought to page
-              where their cameras/webcams are activated for live streaming. (Work needed how to save stream after session
-              is done for later viewing purposes)
+              where their cameras/webcams are activated for live streaming. (Work needed how to save stream after
+              session is done for later viewing purposes)
 
       •Tutors Available Now List and Tutors profile
 
             oThis feature shows which tutors are currently available whom are currently in the Go Live page. It will
-              be easier for students to find which tutors are currently available without needing to search. It will show
-              the name of the tutor and subject they teach. Clicking on the tutor will bring you to the tutors profile
-              page where it gives a more in depth information of the tutor. (Profile Page needs a lot of work)
+              be easier for students to find which tutors are currently available without needing to search. It will
+              show the name of the tutor and subject they teach. Clicking on the tutor will bring you to the tutors
+              profile page where it gives a more in depth information of the tutor. (Profile Page needs a lot of work)
 
       •Main Page/Tutor Page and search tutor (Needs Work)
 
@@ -85,7 +85,7 @@ Initial Release
 
             1.Follow the steps on how to clone a repository here:
 
-                [ https://help.github.com/articles/cloning-a-repository/ ]
+                https://help.github.com/articles/cloning-a-repository/
 
                 There are directions for different platforms for Mac, Windows, and Linux. Follow the directions for
                 your operating system.
@@ -93,11 +93,11 @@ Initial Release
       •How to write to it
 
             1.Once you clone the repository to your desktop, you can edit them in a text editor like Sublime Text,
-                Notepad++, Atom, and many more. (Note: You should copy the code into a separate repository for testing and
-                DO NOT REWRITE THE CODE!)
+                Notepad++, Atom, and many more. (Note: You should copy the code into a separate repository for testing
+                and DO NOT REWRITE THE CODE!)
 
             2.When you are done editing save your file, open command prompt for Windows or Terminal for Mac/Linux.
-                ( you need to download git if you don’t have it here: [https://git-scm.com/downloads])
+                ( you need to download git if you don’t have it here: https://git-scm.com/downloads)
 
             3.To push your changes to the code back to Github repository you write:
 
@@ -107,14 +107,14 @@ Initial Release
 
       •How to test
 
-            1.To test the code you need to create a Heroku account here: [https://www.heroku.com/]
+            1.To test the code you need to create a Heroku account here: https://www.heroku.com/
 
             2.Name your project on Heroku and connect it to repository on GitHub
 
             3.Click open app to start testing
 
             4.To keep track of a database to see users and sessions create an account on mLab here:
-                [https://mlab.com/]
+                https://mlab.com/
 
             5.Name your project on mLab and create a username and password for the project
 
@@ -148,7 +148,7 @@ Initial Release
 
             oMany browsers and operating systems like Chrome, Firefox, Opera, Android, and iOS are supported.
 
-            oFor more information about WebRTC visit:  [https://webrtc.org/start/]
+            oFor more information about WebRTC visit:  https://webrtc.org/start/
 
       •	Stripe
 
@@ -164,7 +164,7 @@ Initial Release
             oMany web and mobile businesses using Stripe includes Twitter, Kickstarter, Shopify, Salesforce, Lyft,
               and many more.
 
-          oFor more information about Stripe visit: [https://stripe.com/docs]
+          oFor more information about Stripe visit: https://stripe.com/docs
 
 
 
@@ -176,61 +176,61 @@ Initial Release
         non-blocking I/O model that makes it lightweight and efficient. Node.js package ecosystem, npm, is the
         largest ecosystem of open source libraries in the world.
 
-      •To download Node.js visit: [https://nodejs.org/en/download/]
+      •To download Node.js visit: https://nodejs.org/en/download/
 
-      •Link to documentations for Node.js: [https://nodejs.org/en/docs/]
+      •Link to documentations for Node.js: https://nodejs.org/en/docs/
 
 
 
   ### -	Links to documentation for dependencies the project works with
 
-      •body – parser (ver. 1.17.1) – version used in project
-              o	[https://www.npmjs.com/package/body-parser]
+      • body – parser (ver. 1.17.1) – version used in project
+              o	https://www.npmjs.com/package/body-parser
 
-      •connect – mongo (ver. 1.3.2) – version used in project
-              o	[https://www.npmjs.com/package/connect-mongo]
+      • connect – mongo (ver. 1.3.2) – version used in project
+              o	https://www.npmjs.com/package/connect-mongo
 
-      •cookie – parser (ver. 1.4.3) – version used in project
-              o	[https://www.npmjs.com/package/cookie-parser]
+      • cookie – parser (ver. 1.4.3) – version used in project
+              o	https://www.npmjs.com/package/cookie-parser
 
-      •debug (ver. 2.6.3) – version used in project
-              o	[https://www.npmjs.com/package/debug]
+      • debug (ver. 2.6.3) – version used in project
+              o	https://www.npmjs.com/package/debug
 
-      •express (ver. 4.15.5) – version used in project
-              o	[https://www.npmjs.com/package/express]
+      • express (ver. 4.15.5) – version used in project
+              o	https://www.npmjs.com/package/express
 
-      •express – session (ver. 1.15.5) – version used in project
-              o	[https://www.npmjs.com/package/express-session]
+      • express – session (ver. 1.15.5) – version used in project
+              o	https://www.npmjs.com/package/express-session
 
-      •less – middleware (ver. 2.2.0) – version used in project
-              o	[https://www.npmjs.com/package/less-middleware]
+      • less – middleware (ver. 2.2.0) – version used in project
+              o	https://www.npmjs.com/package/less-middleware
 
-      •mongoose (ver. 4.11.12) – version used in project
-              o	[https://www.npmjs.com/package/mongoose]
+      • mongoose (ver. 4.11.12) – version used in project
+              o	https://www.npmjs.com/package/mongoose
 
-      •passport (ver. 0.4.0) – version used in project
-              o	[https://www.npmjs.com/package/passport]
+      • passport (ver. 0.4.0) – version used in project
+              o	https://www.npmjs.com/package/passport
 
-      •passport – local (ver. 1.0.0) – version used in project
-              o	[https://www.npmjs.com/package/passport-local]
+      • passport – local (ver. 1.0.0) – version used in project
+              o	https://www.npmjs.com/package/passport-local
 
-      •passport – local mongoose (ver. 4.2.1) – version used in project
-              o	[https://www.npmjs.com/package/passport-local-mongoose]
+      • passport – local mongoose (ver. 4.2.1) – version used in project
+              o	https://www.npmjs.com/package/passport-local-mongoose
 
-      •pug (ver. 2.0.0 – beta11) – version used in project
-              o	[https://www.npmjs.com/package/pug]
+      • pug (ver. 2.0.0 – beta11) – version used in project
+              o	https://www.npmjs.com/package/pug
 
-      •serve – favicon (ver. 2.4.2) – version used in project
-              o	[https://www.npmjs.com/package/serve-favicon]
+      • serve – favicon (ver. 2.4.2) – version used in project
+              o	https://www.npmjs.com/package/serve-favicon
 
-      •socket.io (ver. 2.0.3) – version used in project
-              o	[https://www.npmjs.com/package/socket.io]
+      • socket.io (ver. 2.0.3) – version used in project
+              o	https://www.npmjs.com/package/socket.io
 
-      •stripe (ver. 5.2.0) – version used in project
-              o	[https://www.npmjs.com/package/stripe]
+      • stripe (ver. 5.2.0) – version used in project
+              o	https://www.npmjs.com/package/stripe
 
-      •validator (ver. 8.2.0) – version used in project
-              o	[https://www.npmjs.com/package/validator]
+      • validator (ver. 8.2.0) – version used in project
+              o	https://www.npmjs.com/package/validator
 
 
 
