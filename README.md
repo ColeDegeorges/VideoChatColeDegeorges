@@ -869,6 +869,7 @@ Third Release
           o in addition you need to input your email address and password you are going to use to register
 
           o if you are a tutor you need to click the checkbox and choose the subjects you want to tutor in
+            from the modal
 
       • setting.pug
 
