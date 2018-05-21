@@ -1,5 +1,5 @@
 Spring 2018
-Version 1.2.0
+Version 1.2.1
 Third Release
 
 # VideoChat/TutorFinder
@@ -64,15 +64,16 @@ Third Release
       • Go Live Feature (For Tutors only)
 
             o This feature is only available for tutors. When tutors click the Go Live page they are brought to page
-              where their cameras/webcams are activated for live streaming. (Work needed how to save stream after
-              session is done for later viewing purposes)
+              where their cameras/webcams are activated for live streaming.
+              (Work needed how to save stream after session is done for later viewing purposes)
 
       • Tutors Available Now List and Tutors profile
 
             o This feature shows which tutors are currently available whom are currently in the Go Live page. It will
               be easier for students to find which tutors are currently available without needing to search. It will
               show the name of the tutor and subject they teach. Clicking on the tutor will bring you to the tutors
-              profile page where it gives a more in depth information of the tutor. (Profile Page needs a lot of work)
+              profile page where it gives a more in depth information of the tutor.
+              (Profile Page needs a lot of work)
 
       • Main Page/Tutor Page and search tutor (Needs Work)
 
@@ -83,7 +84,8 @@ Third Release
       • History Page (Needs work)
 
             o This feature will show whom the student had a tutoring session with and vice versa, with information
-              about each session. (History needs work currently a dummy page)
+              about each session.
+              (History needs work currently a dummy page)
 
       • Notes
 
@@ -92,7 +94,17 @@ Third Release
       • Chatbox (Needs work)
 
             o This feature allows both the tutor and student to communicate to one another by typing. It should be able
-              to upload and download files (Currently a dummy needs work to implement)
+              to upload and download files
+              (Needs work, currently you are able to type something and a click send needs more implementation)
+
+      • Settings (Need more work)
+
+            o The settings page allows you to update and/or change your information
+              (Needs more work, currently not working, but there is codes needs more implementation)
+
+      • Tutor’s Profile page
+            o This feature allows you to view a detailed information about the tutor
+              (Needs a lot of work majority of the page is dummy)
 
 
 
@@ -102,7 +114,7 @@ Third Release
 
             1. A GitHub account it needed to access the code base
 
-            2. After obtaining an account, The project manager will invite the team for access in a private
+            2. After obtaining an account, The project manager/director will invite the team for access in a private
                 repository
 
             3. Here is a working site so far deployed on Heroku
@@ -122,7 +134,7 @@ Third Release
                 Notepad++, Atom, and many more. (Note: You should copy the code into a separate repository for testing
                 and DO NOT REWRITE THE CODE!)
 
-            2. When you are done editing save your file, open command prompt for Windows or Terminal for Mac/Linux.
+            2. When you are done editing save your file, open a command prompt for Windows or Terminal for Mac/Linux.
                 ( you need to download git if you don’t have it here: https://git-scm.com/downloads)
 
             3. To push your changes to the code back to Github repository you write:
@@ -155,7 +167,8 @@ Third Release
 
             9. After all that is done test the app again and you should be able to see updates on mLab
 
-            10. Use a dummy credit card when testing for payment 4111 1111 1111 1111 CVC 165 Expiration date 1/2020
+            10. Use a dummy credit card when testing for payment 4111 1111 1111 1111 CVC (Anthing for CVC)
+                Expiration date (Any current or future date)
 
       • How to deploy on AWS (Amazon Web Services)
 
@@ -300,6 +313,12 @@ Third Release
       • mongoose (ver. 4.11.12) – version used in project
               o	https://www.npmjs.com/package/mongoose
 
+      • morgan (ver. 1.8.1) – version used in project
+              o https://www.npmjs.com/package/morgan
+
+      • nodemon (ver. 1.17.3) – version used in project
+              o https://www.npmjs.com/package/nodemon
+
       • passport (ver. 0.4.0) – version used in project
               o	https://www.npmjs.com/package/passport
 
@@ -334,9 +353,11 @@ Third Release
       • On the Tutors/Main Page work needs to be done on the searching functions. The profile pages of the tutors
         and students pages also needs work done all repeating the same thing.
 
+      • Tutors profile page needs work currently dummy page with the exception of the status and payment option
+
       • The History page is currently a dummy page (needs work). The Billing and Dashboard page aren’t coded
 
-      • Setting page (currently being worked on)
+      • Setting page (needs more work)
 
 
 
@@ -409,9 +430,9 @@ Third Release
 
           7. Finally click Pay
 
-### -	Setting(Work in progress)
+### -	Setting(Needs more work)
 
-      • Setting is a place where you can change your password and etc.
+      • Setting is a place where you can update and/or change your password and other personal information
 
 ### -	History (needs work)
 
