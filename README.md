@@ -881,7 +881,8 @@ README.md
 
           o in addition you need to input your email address and password you are going to use to register
 
-          o if you are a tutor you need to click the checkbox and a modal button will activate, click on it and choose the subjects you want to tutor in from the modal
+          o if you are a tutor you need to click the checkbox and a modal button will activate, click on it and
+          choose the subjects you want to tutor in from the modal
 
       • setting.pug
 
