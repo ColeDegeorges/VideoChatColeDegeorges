@@ -1,6 +1,7 @@
 Spring 2018
-Version 1.2.1
+Version 1.2.2
 Third Release
+README.md
 
 # VideoChat/TutorFinder
 
@@ -359,6 +360,8 @@ Third Release
 
       • Setting page (needs more work)
 
+      • Registration page header is not formatted correctly because of modal, but clicking on the links on the headers still works fine
+
 
 
 ## Users Quick Guide:
@@ -375,8 +378,18 @@ Third Release
 
       • For Tutors
 
-            o Click Tutor and a list of subjects will show up choose the subject or subjects you will tutor and then
-            Click Register when you are done
+            o Click the Tutor checkbox
+
+            o You will then see the Select Subjects button activated click it
+
+            o A pop up will appear
+
+            o Choose the subject or subjects you would like to tutor
+
+            o Close the pop up
+
+            o Then click Register
+
 
 ### -	Login
 
@@ -868,8 +881,7 @@ Third Release
 
           o in addition you need to input your email address and password you are going to use to register
 
-          o if you are a tutor you need to click the checkbox and choose the subjects you want to tutor in
-            from the modal
+          o if you are a tutor you need to click the checkbox and a modal button will activate, click on it and choose the subjects you want to tutor in from the modal
 
       • setting.pug
 
